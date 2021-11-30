@@ -1,5 +1,5 @@
 plugins {
-    id "org.openjfx.javafxplugin" version "0.0.8"
+    id "org.openjfx.javafxplugin" version "0.0.10"
     id "application"
 }
 
@@ -8,12 +8,12 @@ repositories {
 }
 
 javafx {
-    version = '13'
+    version = '17'
     modules = [ 'javafx.controls']
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 mainClassName = 'it.unimi.di.prog2.blackjack.BlackJack'
