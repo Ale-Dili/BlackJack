@@ -56,10 +56,14 @@ public class BlackJack {
       banco.gioca();
 
 
-    System.out.println(banco);
+    //System.out.println(banco);
+    System.out.println("-----Carte banco:------ ");
+    banco.toString();
+    System.out.println("_________________________");
     for (Sfidante sfidante : sfidanti) {
-
+      System.out.println("------"+sfidante.getName()+"----------");
       sfidante.toString();
+      //System.out.println(sfidante.getName());
       if (sfidante.isSballato() || (sfidante.getPunti() < banco.getPunti() && !banco.isSballato()))
         System.out.println("Vince il banco.");
       else if (banco.isSballato() || sfidante.getPunti() > banco.getPunti())
@@ -67,6 +71,7 @@ public class BlackJack {
       else
         System.out.println("Pareggio.");
     }
+    System.out.println("_________________________");
   }
 
 }

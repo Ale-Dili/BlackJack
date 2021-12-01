@@ -17,11 +17,7 @@ public class Strat1 implements Strategia {
     }
 
     public boolean chiediCarta() {
-        int val=0;
-        for (Iterator<Card> cards = player.getCards(); cards.hasNext(); ) {
-            Card card = cards.next();
-            val += card.getRank().ordinal();
-        }
+        int val=player.getPunti();
 
         if (val <15)
             return true;

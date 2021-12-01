@@ -40,7 +40,7 @@ public class Sfidante implements GiocatoreBJ {
     carteIniziali();
 
     while(strategia.chiediCarta()){
-      if (isSballato())
+      if (isSballato()||getPunti()!=21)
         break;
       mano.add(banco.draw());
     }
@@ -61,4 +61,9 @@ public class Sfidante implements GiocatoreBJ {
 
 
   //TODO i vari metodi richiesti per aderire all'interfaccia
+
+  public String toString(){
+  for (Card carta : mano) System.out.println(carta);
+    return null;
+  }
 }

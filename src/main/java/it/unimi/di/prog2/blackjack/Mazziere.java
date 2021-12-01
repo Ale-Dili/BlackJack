@@ -38,4 +38,8 @@ public class Mazziere implements GiocatoreBJ {
 
   //TODO i vari metodi richiesti per aderire all'interfaccia
 
+  public String toString(){
+    for (Card carta : mano) System.out.println(carta);
+    return null;
+  }
 }

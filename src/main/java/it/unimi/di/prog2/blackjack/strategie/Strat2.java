@@ -21,17 +21,10 @@ public class Strat2 implements Strategia {
 
     @Override
     public boolean chiediCarta() {
-        int valPlayer=0;
-        for (Iterator<Card> cards = player.getCards(); cards.hasNext(); ) {
-            Card card = cards.next();
-            valPlayer += card.getRank().ordinal();
-        }
+        int valPlayer=player.getPunti();
 
-        int valMazziere=0;
-        for (Iterator<Card> cards = mazziere.getCards(); cards.hasNext(); ) {
-            Card card = cards.next();
-            valMazziere += card.getRank().ordinal();
-        }
+
+        int valMazziere=mazziere.getPunti();
 
         if (valMazziere>valPlayer)
             return true;
