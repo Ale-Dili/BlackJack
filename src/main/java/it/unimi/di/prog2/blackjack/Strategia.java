@@ -7,5 +7,7 @@ public interface Strategia {
   //TODO  implementare la strategia finale che sceglie di
   // "stare" sempre, come NullObject Pattern
   boolean chiediCarta();
+
+
 }
 

@@ -14,6 +14,28 @@ public class Mazziere implements GiocatoreBJ {
     return mazzo.draw();
   }
 
+  @Override
+  public void carteIniziali() {
+    mano.add(draw());
+  }
+
+  @Override
+  public void gioca() {
+    mano.add(draw());
+    while(getPunti()<17)
+      mano.add(draw());
+  }
+
+  @Override
+  public Iterator<Card> getCards() {
+    return mano.iterator();
+  }
+
+  @Override
+  public String getName() {
+    return null;
+  }
+
   //TODO i vari metodi richiesti per aderire all'interfaccia
 
 }

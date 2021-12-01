@@ -1,6 +1,8 @@
 package it.unimi.di.prog2.blackjack;
 
 //TODO spiegare in poche righe di commento se ha senso concatenare una dopo l'altra due strategie Random
+
+//non ha senso
 public class RandomStrategy implements Strategia {
   final private Strategia next;
 

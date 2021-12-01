@@ -1,6 +1,10 @@
 package it.unimi.di.prog2.blackjack;
 
 import ca.mcgill.cs.stg.solitaire.cards.Card;
+import it.unimi.di.prog2.blackjack.strategie.Strat1;
+import it.unimi.di.prog2.blackjack.strategie.Strat2;
+import it.unimi.di.prog2.blackjack.strategie.Strat3;
+import it.unimi.di.prog2.blackjack.strategie.StratDef;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +15,7 @@ public class BlackJack {
   }
 
   public static void main(String[] args) {
+
     Mazziere banco = new Mazziere();
 
     Sfidante carlo = new Sfidante("Carlo", banco);
@@ -19,7 +24,37 @@ public class BlackJack {
 
     List<Sfidante> sfidanti = new ArrayList<>();
 
+    sfidanti.add(carlo);
+    sfidanti.add(mattia);
+    sfidanti.add(violetta);
+
+
     //TODO  gestire lo svolgimento di una partita con i tre sfidanti
+
+    banco.carteIniziali();
+
+    Strategia strat;
+
+    strat = new RandomStrategy(new StratDef());
+    carlo.setStrategia(strat);
+
+    strat = new Strat1(new Strat2(new StratDef(),mattia,banco),mattia);
+    mattia.setStrategia(strat);
+
+    strat = new Strat3(new Strat2(new Strat1(new StratDef(),violetta),violetta,banco),violetta);
+    violetta.setStrategia(strat);
+
+    boolean sballato = true;
+    for (Sfidante sfidante : sfidanti){
+      sfidante.gioca();
+      if (!sfidante.isSballato()){
+        sballato=false;
+      }
+    }
+
+    if(!sballato)
+      banco.gioca();
+
 
     System.out.println(banco);
     for (Sfidante sfidante : sfidanti) {
