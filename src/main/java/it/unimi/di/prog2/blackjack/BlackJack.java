@@ -58,7 +58,8 @@ public class BlackJack {
 
     System.out.println(banco);
     for (Sfidante sfidante : sfidanti) {
-      System.out.println(sfidante);
+
+      sfidante.toString();
       if (sfidante.isSballato() || (sfidante.getPunti() < banco.getPunti() && !banco.isSballato()))
         System.out.println("Vince il banco.");
       else if (banco.isSballato() || sfidante.getPunti() > banco.getPunti())
